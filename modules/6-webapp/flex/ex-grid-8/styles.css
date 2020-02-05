@@ -1,0 +1,20 @@
+#wrapper {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    'one . . .'
+    '. two two two'
+    '. two two two'
+    '. . . three';
+}
+#one {
+  grid-area: one;
+}
+#two {
+  grid-area: two;
+}
+#three {
+  grid-area: three;
+}
