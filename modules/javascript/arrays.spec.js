@@ -125,18 +125,15 @@ describe('arrays', () => {
 
   it('should make sure every element of the array is positive', () => {
     const given = [1, -2, -5, 9]
-    const actual = given.filter(num => num < 0).length <= 0
+    const positive = number => number > 0
+    const actual = given.every(positive)
     expect(actual).toBe(false)
   })
 
   it('should add the length of all sub arrays', () => {
     const given = [1, [2, 3], [4, 5], [6, 7]]
     const actual = given.reduce((acc, currentItem) => {
-      if (acc[0] === undefined) {
-        acc[0] = currentItem
-      } else {
-        acc = acc.concat(currentItem)
-      }
+      acc[0] === undefined ? acc[0] = currentItem : acc = acc.concat(currentItem)
       return acc
     }, []).length
     expect(actual).toBe(7)
