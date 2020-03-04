@@ -15,10 +15,11 @@ const icons: Record<string, string> ={
 interface Props {
   type : IconType
   size?: Size
+  className: string
 }
 
 
-export const Icon: React.FunctionComponent<Props> = ({type, size = 'm'}) => {
+export const Icon: React.FunctionComponent<Props> = ({type, size = 'm', className}) => {
   return (
     <i className={cx('icon', `icon-size-${size}`) }>
       {icons[type]}
