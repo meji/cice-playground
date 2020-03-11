@@ -1,11 +1,10 @@
+html,
 body {
   margin: 0;
+}
+
+body {
   font-family: var(--body-font);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.my-button {
-  --button-background: pink;
-  --button-text: white;
 }
