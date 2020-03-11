@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button } from '../../../../core/components/button/button'
 import { Todo as TodoModel } from '../../domain/todo'
+import { httpClient } from '../../../../utils/httpClient'
 
 interface Props {
   onCreate(todoText: string): void
@@ -17,6 +18,7 @@ export const TodoCreate: React.FunctionComponent<Props> = ({ onCreate, todos }) 
     setTodoText(e.currentTarget.value);
     todos.find(todo => todo.text === e.currentTarget.value) !== undefined ? setDisabledButton(true) : setDisabledButton(false)
   }
+
   return (
     <form
       onSubmit={event => {
