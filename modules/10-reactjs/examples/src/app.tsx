@@ -4,8 +4,8 @@ import { Context } from './context'
 import { CustomHooks } from './custom-hooks'
 import { UseEffect } from './use-effect'
 import { UseReducer } from './use-reducer'
-import { UseReducerOriginal } from './use-reducer-original'
 import { UseStateImmutable } from './use-state-immutable'
+import { MyUseReducerOriginal } from './my-use-reducer-original'
 import { UseReducerWithOptions } from './use-reducer-with-options'
 
 export function App() {
@@ -16,7 +16,7 @@ export function App() {
       <Link to="/use-effect">Use Effect</Link>
       <Link to="/use-reducer">Use Reducer</Link>
       <Link to="/use-reducer-with-options">Use With options</Link>
-      <Link to="/use-reducer-original">Use Reducer Original</Link>
+      <Link to="/my-use-reducer-original">My Use Reducer Original</Link>
       <Link to="/use-reducer-refactor">Use Reducer Refactor</Link>
       <Link to="/use-state-immutable">Use State Immutable</Link>
       <Route path="/context">
@@ -37,8 +37,8 @@ export function App() {
       <Route path="/use-reducer-with-options">
         <UseReducerWithOptions />
       </Route>
-      <Route path="/use-reducer-original">
-        <UseReducerOriginal />
+      <Route path="/my-use-reducer-original">
+        <MyUseReducerOriginal />
       </Route>
       <Route path="/use-state-immutable">
         <UseStateImmutable />
