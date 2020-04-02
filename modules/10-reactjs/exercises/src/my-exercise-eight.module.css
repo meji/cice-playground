@@ -1,0 +1,6 @@
+.gradient{
+  width: 300px;
+  height: 300px;
+  background: conic-gradient(red var(--grades), orange var(--grades) calc(var(--grades)*2), yellow calc(var(--grades)*2));
+  border-radius: 50%
+}
