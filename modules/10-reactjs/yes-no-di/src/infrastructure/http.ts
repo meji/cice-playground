@@ -1,5 +1,8 @@
+import { inject, injectable } from 'inversify'
+
+@injectable()
 export class Http {
-  constructor(private readonly fetcher: typeof fetch) {}
+  constructor(@inject('FETCHER') private readonly fetcher: typeof fetch) {}
 
   async get<Result>(url: string): Promise<Result> {
     const response = await this.fetcher(url)

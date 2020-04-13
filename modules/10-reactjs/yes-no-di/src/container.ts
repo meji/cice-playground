@@ -1,0 +1,24 @@
+import "reflect-metadata";
+import { Container } from "inversify";
+import { YesNoHttpRepository } from "./infrastructure/yes-no-http-repository";
+import { YesNoDtoToYesNoMapper } from "./infrastructure/yes-no-dto-to-yes-no-mapper";
+import { Http } from "./infrastructure/http";
+import { YesNoRepository } from "./domain/yes-no-repository";
+
+const container = new Container()
+
+container.bind<typeof fetch>('FETCHER').toConstantValue(window.fetch.bind(window))
+container
+  .bind('HTTP')
+  .to(Http)
+  .inSingletonScope()
+container
+  .bind('YES_NO_DTO_TO_YES_NO_MAPPER')
+  .to(YesNoDtoToYesNoMapper)
+  .inSingletonScope()
+container
+  .bind<YesNoRepository>('YES_NO_REPOSITORY')
+  .to(YesNoHttpRepository)
+  .inSingletonScope()
+
+export { container }
