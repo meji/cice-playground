@@ -8,6 +8,6 @@ export const MyExerciseThree: React.FC = () => {
     }).join('')
   }
   return (
-    <input type="text" value={value} onChange={e=> setValue(writeConsonant(e.target.value))}/>
+    <input type="text" value={value} aria-label="Input" onChange={e=> setValue(writeConsonant(e.target.value))}/>
   )
 }
